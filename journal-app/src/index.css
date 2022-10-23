@@ -40,56 +40,88 @@ code {
   letter-spacing: -0.075em;
 }
 
-.card--location--info {
-  padding: 15px;
+.cards-list {
+  display: flex;
+  flex-direction: column;
+  padding: 4em 3em;
 }
 
-.card--country {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 12px;
+.card {
+  color: var(--clr-text-main);
+  display: flex;
+  flex-direction: row;
+  padding: 2em 0;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+.card--img {
+  height: 100%;
+  /* width: 20vw; */
+  width: 80%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 0.3em;
+  transform: scale(1);
+  transition: all 650ms ease-in-out;
+}
+
+.card--img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
+    0 4px 4px rgba(0, 0, 0, 0.11), 0 8px 8px rgba(0, 0, 0, 0.11),
+    0 16px 16px rgba(0, 0, 0, 0.11), 0 32px 32px rgba(0, 0, 0, 0.11);
+  /* filter: brightness(80%); */
+}
+
+.card--infos {
+  margin-left: 1em;
+  padding: 0.5em;
+}
+
+.card--location-icon {
+  color: var(--clr-accent);
+}
+
+.card--location {
+  display: inline-block;
+  font-size: 0.75rem;
   letter-spacing: 0.17em;
+  text-transform: uppercase;
+  margin: 0 1em 0 0.25em;
+  color: var(--clr-text-main);
 }
 
-.card--link {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 400;
-  margin-left: 15px;
-  line-height: 12px;
-  text-decoration-line: underline;
-  color: #918e9b;
+.card--location-url {
+  color: var(--clr-text-light);
+  font-size: 0.75rem;
 }
 
 .card--title {
-  font-family: "Inter";
-  font-style: normal;
+  font-size: 2rem;
+  margin: 0.25em 0;
   font-weight: 700;
-  font-size: 25px;
-  line-height: 30px;
-  padding: 15px;
-  color: #2b283a;
 }
 
 .card--date {
-  padding: 15px;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 150%;
-  color: #2b283a;
+  font-weight: 700;
 }
 
 .card--description {
-  padding: 15px;
-  font-family: "Inter";
-  font-style: normal;
+  max-width: 50rem;
+  margin-top: 2em;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 0.75rem;
   line-height: 150%;
-  color: #2b283a;
-  width: 550px;
+}
+
+@media only screen and (max-width: 1920px) and (min-width: 1000px) {
+  .card {
+    justify-content: center;
+  }
+  .card--infos {
+    text-align: left;
+    margin-top: 10px;
+  
+  }
 }

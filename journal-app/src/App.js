@@ -7,13 +7,7 @@ function App() {
     return (
       <TravelCard
         key={info.key}
-        img={info.imgURL}
-        title={info.title}
-        startDate={info.startDate}
-        endDate={info.endDate}
-        location={info.location}
-        googleMapsUrl={info.googleMapsUrl}
-        description={info.description}
+        {...info}
       />
     );
   });

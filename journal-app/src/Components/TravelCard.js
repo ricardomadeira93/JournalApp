@@ -1,15 +1,27 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
 export default function TravelCard(props) {
   return (
-    <div className="travelCard--info">
-      <div className="card--location--info">
-        <span className="card--country">{props.location}</span>
-        <a className="card--link" href={props.googleMapsUrl}>View on Google Maps</a>
+    <div className="card">
+      <div className="card--img-box">
+        <img className="card--img" src={props.imageUrl} alt={props.title} />
       </div>
-      <h1 className="card--title">{props.title}</h1>
-      <span className="card--date">{props.startDate} - {props.endDate}</span>
-      <p className="card--description">{props.description}</p>
+
+      <div className="card--infos">
+        <FontAwesomeIcon icon={faLocationDot} className="card--location-icon" />
+        <h2 className="card--location">{props.location}</h2>
+        <a className="card--location-url" href={props.googleMapsUrl}>
+          View on Google Maps
+        </a>
+
+        <h3 className="card--title">{props.title}</h3>
+        <p className="card--date">
+          {props.startDate} - {props.endDate}
+        </p>
+        <p className="card--description">{props.description}</p>
+      </div>
     </div>
   );
 }
